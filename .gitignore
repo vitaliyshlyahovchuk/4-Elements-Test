@@ -1,0 +1,10 @@
+android
+Flash
+mac
+resources
+start
+Utils
+*.sdf
+
+# настройки ant-проекта для андроида
+local.properties

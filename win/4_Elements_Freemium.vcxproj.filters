@@ -1,0 +1,1099 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2012 (http://www.altova.com) by AK (OOO Playrix) -->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="4_Elements_free">
+      <UniqueIdentifier>{818d824c-7562-42da-a67d-b57f813f0369}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{23de0009-5cc1-44d9-8116-273d7ca9b48c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\xml">
+      <UniqueIdentifier>{95e9e408-7adf-46d4-86a5-d68776743931}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\lua">
+      <UniqueIdentifier>{260659a8-fe2e-4751-998e-4ad59884adff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Utils">
+      <UniqueIdentifier>{689a384c-893b-4e8a-82af-6101991c0cd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Match3">
+      <UniqueIdentifier>{2b7a9ada-be6c-4648-af5e-c655f77cb9d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Other">
+      <UniqueIdentifier>{f2fe4f27-1356-4b50-85bd-bc5e51bb15be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Match3\Match3 Background">
+      <UniqueIdentifier>{7da3108f-d524-4d83-b734-0a957a0978a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Match3\Match3 Gadgets">
+      <UniqueIdentifier>{6d6fc471-1caa-40c8-b2a3-6b765c5bd290}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Match3\Match3 GUI">
+      <UniqueIdentifier>{bbf6393e-00e1-44cb-ba65-f4d1f1834184}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Match3\Match3 Square">
+      <UniqueIdentifier>{c416e418-32a9-4816-a762-b314f540b510}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Match3\editor">
+      <UniqueIdentifier>{b56b2c6c-192e-45a0-9e51-22920d7a7ae7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Match3\Energy">
+      <UniqueIdentifier>{4e9cbff2-6dfa-4fcf-903d-5a505a5dd71c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Match3\Controllers">
+      <UniqueIdentifier>{b3096902-474f-4576-b518-db3871523219}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Match3\Match3 Statistics">
+      <UniqueIdentifier>{a98d780b-72ca-4fa0-b794-10ca075d173d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\GUI">
+      <UniqueIdentifier>{f2b05721-af28-48ec-a632-dff3e1149a95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Card">
+      <UniqueIdentifier>{018bf1fb-ec09-4107-addc-00f534932f07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Friends">
+      <UniqueIdentifier>{93b19be0-79e3-416f-b801-d3db2bd86494}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Match3\Utils">
+      <UniqueIdentifier>{73e1a785-5f0a-4cca-9a5c-368e490506ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Match3\Match3 Bonuses">
+      <UniqueIdentifier>{51b0ee61-d02d-4cdf-84ac-8f38c26d5977}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Match3\Tutorial">
+      <UniqueIdentifier>{603a336d-86f0-489a-997a-439a8763bd23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Match3\Spirit">
+      <UniqueIdentifier>{aa7b8eaf-34b5-4aae-ae1f-c602e14899d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4_Elements_free\Match3\Island">
+      <UniqueIdentifier>{956e3a13-6deb-45a5-b65a-9bd39fffa995}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\lua\tutorial">
+      <UniqueIdentifier>{494cd6ec-b823-4bd9-b972-08ef745e19f3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\WinMain.cpp">
+      <Filter>4_Elements_free</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Game.cpp">
+      <Filter>4_Elements_free\Match3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameField.cpp">
+      <Filter>4_Elements_free\Match3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameFieldAddress.cpp">
+      <Filter>4_Elements_free\Match3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameFieldWidget.cpp">
+      <Filter>4_Elements_free\Match3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BombField.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\LevelColors.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RyushkiGadget.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SnapGadgetsClass.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameSquare.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Square</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Ryushka.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Background</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RyushkaFaerie.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Background</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RyushkaGroup.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Background</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RyushkaSelect.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Background</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ActCounter.cpp">
+      <Filter>4_Elements_free\Match3\Match3 GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Match3Loot.cpp">
+      <Filter>4_Elements_free\Match3\Match3 GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ChangeEnergySpeedClass.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameInfo.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MousePosWidget.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ParticleEffectWrapper.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\PlayerStatistic.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RenderTargetHolder.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ScrollableSelectorWidget.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SimpleSlider.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SomeOperators.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Spacing2D.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Splash.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\StripEffect.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Tooltip.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EditorFileList.cpp">
+      <Filter>4_Elements_free\Match3\editor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EditorWidget.cpp">
+      <Filter>4_Elements_free\Match3\editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Combobox.cpp">
+      <Filter>4_Elements_free\Match3\editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\FieldStyles.cpp">
+      <Filter>4_Elements_free\Match3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EnergyReceiver.cpp">
+      <Filter>4_Elements_free\Match3\Energy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MyApplication.cpp">
+      <Filter>4_Elements_free</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameColor.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Square</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\FlyTextBySpline.cpp">
+      <Filter>4_Elements_free\Match3\Match3 GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ChipsInfo.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SquareNewInfo.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GroundInfo.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\LevelEnd.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\LiveCounter.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameFillBonus.cpp">
+      <Filter>4_Elements_free\Match3\Match3 GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EditorUtils.cpp">
+      <Filter>4_Elements_free\Match3\editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EditorPanel.cpp">
+      <Filter>4_Elements_free\Match3\editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\PostEffectWave.cpp">
+      <Filter>4_Elements_free\Match3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Match3Gadgets.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\UndergoundPrizes.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BaseEditorMaker.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SnapGadgetElements.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\FreeFront.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Match3Border.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\WallDrawer.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\LockBarriers.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DataStoreWithRapid.cpp">
+      <Filter>4_Elements_free\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MaybeMoveHint.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameChipRemover.cpp">
+      <Filter>4_Elements_free\Match3\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameChipExplodeRemover.cpp">
+      <Filter>4_Elements_free\Match3\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameFieldControllers.cpp">
+      <Filter>4_Elements_free\Match3\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameFieldController.cpp">
+      <Filter>4_Elements_free\Match3\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DebugSelectLevel.cpp">
+      <Filter>4_Elements_free\Match3\Match3 GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ClickMessageEdit.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Place2D.cpp">
+      <Filter>4_Elements_free\Match3\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Match3.cpp">
+      <Filter>4_Elements_free\Match3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stdafx.cpp">
+      <Filter>4_Elements_free</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\StaticArray.cpp">
+      <Filter>4_Elements_free\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SelectingChip.cpp">
+      <Filter>4_Elements_free\Match3\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameBonus.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Bonuses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameBonuses.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Bonuses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CombinedBonus.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Bonuses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameLightningController.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Bonuses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameOrder.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ShaderMaterial.cpp">
+      <Filter>4_Elements_free\Match3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameScriptMap.cpp">
+      <Filter>4_Elements_free</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\card\CardWidget.cpp">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\FlashUserAvatar.cpp">
+      <Filter>4_Elements_free\Friends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\FriendInfo.cpp">
+      <Filter>4_Elements_free\Friends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DynamicScroller.cpp">
+      <Filter>4_Elements_free\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EditBoxEx.cpp">
+      <Filter>4_Elements_free\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Tutorial.cpp">
+      <Filter>4_Elements_free\Match3\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TimeFactorWidget.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ChipSource.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CellWalls.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\LevelInfoManager.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Match3Background.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Background</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ReceiverEffects.cpp">
+      <Filter>4_Elements_free\Match3\Energy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EnergyReceivers.cpp">
+      <Filter>4_Elements_free\Match3\Energy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Energy.cpp">
+      <Filter>4_Elements_free\Match3\Energy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\StarArrowFlyEffect.cpp">
+      <Filter>4_Elements_free\Match3\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\card\AvatarContainer.cpp">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\card\BigBackground.cpp">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\card\CardFactory.cpp">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\card\CardResourceManager.cpp">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\card\Container.cpp">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\card\Gateway.cpp">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\card\LevelMarker.cpp">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\card\Map.cpp">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\card\MapItem.cpp">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\card\ParalaxCloud.cpp">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\card\SpriteCardItem.cpp">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\card\StaticImage.cpp">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\card\UpdateLevelItem.cpp">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EffectWay.cpp">
+      <Filter>4_Elements_free\Match3\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\FUUUTester.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\LevelEndEffects.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MovingMonster.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BoostKinds.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CheckBoxEx.cpp">
+      <Filter>4_Elements_free\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TutorialEffects.cpp">
+      <Filter>4_Elements_free\Match3\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DetectBorder2D.cpp">
+      <Filter>4_Elements_free\Match3\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BlurScreen.cpp">
+      <Filter>4_Elements_free\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameTask.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\FlyingThing.cpp">
+      <Filter>4_Elements_free\Match3\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Match3Spirit.cpp">
+      <Filter>4_Elements_free\Match3\Spirit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\card\Shine.cpp">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SplineBezier.cpp">
+      <Filter>4_Elements_free\Match3\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\card\CardFlashAnimationPlayer.cpp">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ArrowEffects.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Bonuses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SwrveManager.cpp">
+      <Filter>4_Elements_free\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\FieldBears.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\PictureGenerator.cpp">
+      <Filter>4_Elements_free\Match3\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BoostersTransitionWidget.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RoomGates.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TutorialFlashObjects.cpp">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IslandArrows.cpp">
+      <Filter>4_Elements_free\Match3\Island</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ChipDistortions.cpp">
+      <Filter>4_Elements_free\Match3\Match3 Square</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Game.h">
+      <Filter>4_Elements_free\Match3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameField.h">
+      <Filter>4_Elements_free\Match3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameFieldAddress.h">
+      <Filter>4_Elements_free\Match3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameFieldWidget.h">
+      <Filter>4_Elements_free\Match3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BombField.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\LevelColors.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RyushkiGadget.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SnapGadgetsClass.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameSquare.h">
+      <Filter>4_Elements_free\Match3\Match3 Square</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Ryushka.h">
+      <Filter>4_Elements_free\Match3\Match3 Background</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RyushkaFaerie.h">
+      <Filter>4_Elements_free\Match3\Match3 Background</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RyushkaGroup.h">
+      <Filter>4_Elements_free\Match3\Match3 Background</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RyushkaSelect.h">
+      <Filter>4_Elements_free\Match3\Match3 Background</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ActCounter.h">
+      <Filter>4_Elements_free\Match3\Match3 GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Match3Loot.h">
+      <Filter>4_Elements_free\Match3\Match3 GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Array2D.h">
+      <Filter>4_Elements_free\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ChangeEnergySpeedClass.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameInfo.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\LoadScreenWidget.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MousePosWidget.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ParticleEffectWrapper.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\PlayerStatistic.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RenderTargetHolder.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\resource.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ScrollableSelectorWidget.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SimpleSlider.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SomeOperators.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Spacing2D.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Splash.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\StripEffect.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TextureMesh.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Tooltip.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EditorFileList.h">
+      <Filter>4_Elements_free\Match3\editor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EditorWidget.h">
+      <Filter>4_Elements_free\Match3\editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Combobox.h">
+      <Filter>4_Elements_free\Match3\editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\FieldStyles.h">
+      <Filter>4_Elements_free\Match3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EnergyReceiver.h">
+      <Filter>4_Elements_free\Match3\Energy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MyApplication.h">
+      <Filter>4_Elements_free</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameColor.h">
+      <Filter>4_Elements_free\Match3\Match3 Square</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ChipsInfo.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SquareNewInfo.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GroundInfo.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\LevelEnd.h">
+      <Filter>4_Elements_free\Match3\Match3 Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\LiveCounter.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameFillBonus.h">
+      <Filter>4_Elements_free\Match3\Match3 GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EditorUtils.h">
+      <Filter>4_Elements_free\Match3\editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EditorPanel.h">
+      <Filter>4_Elements_free\Match3\editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\PostEffectWave.h">
+      <Filter>4_Elements_free\Match3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Match3Gadgets.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\UndergoundPrizes.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BaseEditorMaker.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SnapGadgetElements.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\FreeFront.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Match3Border.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\WallDrawer.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\StaticArray.h">
+      <Filter>4_Elements_free\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\LockBarriers.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DataStoreWithRapid.h">
+      <Filter>4_Elements_free\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MaybeMoveHint.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameChipRemover.h">
+      <Filter>4_Elements_free\Match3\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameChipExplodeRemover.h">
+      <Filter>4_Elements_free\Match3\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameFieldControllers.h">
+      <Filter>4_Elements_free\Match3\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameFieldController.h">
+      <Filter>4_Elements_free\Match3\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DebugSelectLevel.h">
+      <Filter>4_Elements_free\Match3\Match3 GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DynamicArray2D.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DynamicArray.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ClickMessageEdit.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Place2D.h">
+      <Filter>4_Elements_free\Match3\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Match3.h">
+      <Filter>4_Elements_free\Match3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\stdafx.h">
+      <Filter>4_Elements_free</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SelectingChip.h">
+      <Filter>4_Elements_free\Match3\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameBonus.h">
+      <Filter>4_Elements_free\Match3\Match3 Bonuses</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameBonuses.h">
+      <Filter>4_Elements_free\Match3\Match3 Bonuses</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CombinedBonus.h">
+      <Filter>4_Elements_free\Match3\Match3 Bonuses</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameLightningController.h">
+      <Filter>4_Elements_free\Match3\Match3 Bonuses</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameOrder.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ShaderMaterial.h">
+      <Filter>4_Elements_free\Match3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\card\CardWidget.h">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\FlashUserAvatar.h">
+      <Filter>4_Elements_free\Friends</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\FriendInfo.h">
+      <Filter>4_Elements_free\Friends</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DynamicScroller.h">
+      <Filter>4_Elements_free\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EditBoxEx.h">
+      <Filter>4_Elements_free\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Tutorial.h">
+      <Filter>4_Elements_free\Match3\Tutorial</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TimeFactorWidget.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ChipSource.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CellWalls.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\LevelInfoManager.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Match3Background.h">
+      <Filter>4_Elements_free\Match3\Match3 Background</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ReceiverEffects.h">
+      <Filter>4_Elements_free\Match3\Energy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EnergyReceivers.h">
+      <Filter>4_Elements_free\Match3\Energy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Energy.h">
+      <Filter>4_Elements_free\Match3\Energy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\StarArrowFlyEffect.h">
+      <Filter>4_Elements_free\Match3\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\card\AvatarContainer.h">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\card\BigBackground.h">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\card\CardFactory.h">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\card\CardResourceManager.h">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\card\Container.h">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\card\Gateway.h">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\card\LevelMarker.h">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\card\Map.h">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\card\MapItem.h">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\card\ParalaxCloud.h">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\card\SpriteCardItem.h">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\card\StaticImage.h">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\card\UpdateLevelItem.h">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EffectWay.h">
+      <Filter>4_Elements_free\Match3\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\FUUUTester.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\LevelEndEffects.h">
+      <Filter>4_Elements_free\Match3\Match3 Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MovingMonster.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SplineBezier.h">
+      <Filter>4_Elements_free\Match3\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BoostKinds.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CheckBoxEx.h">
+      <Filter>4_Elements_free\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TutorialEffects.h">
+      <Filter>4_Elements_free\Match3\Tutorial</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DetectBorder2D.h">
+      <Filter>4_Elements_free\Match3\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BlurScreen.h">
+      <Filter>4_Elements_free\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameTask.h">
+      <Filter>4_Elements_free\Match3\Match3 Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\FlyingThing.h">
+      <Filter>4_Elements_free\Match3\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Match3Spirit.h">
+      <Filter>4_Elements_free\Match3\Spirit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\FlyTextBySpline.h">
+      <Filter>4_Elements_free\Match3\Match3 GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\card\Shine.h">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\card\CardFlashAnimationPlayer.h">
+      <Filter>4_Elements_free\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ArrowEffects.h">
+      <Filter>4_Elements_free\Match3\Match3 Bonuses</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SwrveManager.h">
+      <Filter>4_Elements_free\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\FieldBears.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\PictureGenerator.h">
+      <Filter>4_Elements_free\Match3\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BoostersTransitionWidget.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RoomGates.h">
+      <Filter>4_Elements_free\Match3\Match3 Gadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TutorialFlashObjects.h">
+      <Filter>4_Elements_free\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\IslandArrows.h">
+      <Filter>4_Elements_free\Match3\Island</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ChipDistortions.h">
+      <Filter>4_Elements_free\Match3\Match3 Square</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameScriptMap.h">
+      <Filter>4_Elements_free</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\src\MagicGame.rc">
+      <Filter>4_Elements_free\Other</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="..\src\res.rc">
+      <Filter>4_Elements_free\Other</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\start\base\CommonRes.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\DebugLayerGui.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\Editor\Editor_GUI.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\Editor\EditorRes.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\Effects\AltarsEffects.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\Effects\Match3Effect.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\fonts.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\Game_GUI.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\GameDescriptions.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\GamePanel.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\GameResource.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\KeyMap.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\LayersPreloading.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\LevelMap.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\LoadScreenGui.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\Menu_GUI.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\Music.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\ParticleGroups.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\ResourcePreloading.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\SpisokRyushek.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\Card_GUI.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\GameSquareRes.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\maps\mapResources.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\Sound.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\CardResource.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\GameSettings.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\FlashResources.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\mac\Settings.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\Effects\star.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\GameResource_ipad.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\GameResource_ipad_retina.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\GameResource_iphone.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+    <Xml Include="..\start\base\FlyingBoosters.xml">
+      <Filter>base\xml</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\start\base\scripts\tutorials\TutorLevel_1.lua">
+      <Filter>base\lua\tutorial</Filter>
+    </None>
+    <None Include="..\start\base\scripts\tutorials\TutorLevel_2.lua">
+      <Filter>base\lua\tutorial</Filter>
+    </None>
+    <None Include="..\start\base\scripts\tutorials\TutorLevel_4.lua">
+      <Filter>base\lua\tutorial</Filter>
+    </None>
+    <None Include="..\start\base\scripts\tutorials\TutorLevel_5.lua">
+      <Filter>base\lua\tutorial</Filter>
+    </None>
+    <None Include="..\start\base\scripts\tutorials\TutorLevel_7.lua">
+      <Filter>base\lua\tutorial</Filter>
+    </None>
+    <None Include="..\start\base\scripts\tutorials\TutorLevel_11.lua">
+      <Filter>base\lua\tutorial</Filter>
+    </None>
+    <None Include="..\start\base\scripts\askHelp.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\boostBuy.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\boostConfirm.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\card.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\card_gui.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\checkTexts.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\commonFunction.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\dialogs.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\facebookConnect.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\facebookPanel.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\findKey.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\game.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\gateComplete.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\globals.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\gui.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\levelComplete.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\levelFail.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\levelFailRetry.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\levelStart.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\livePanel.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\load_screen.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\marketingActions.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\match3_panels.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\menuInGame.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\messageCenter.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\needLive.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\needTicket.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\notificationSettings.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\optionsDialog.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\panelEffects.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\preload_start.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\selectFile.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\shopPanel.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\simple_text.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\start.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\tutorial.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\utils.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\quit_level.lua">
+      <Filter>base\lua</Filter>
+    </None>
+    <None Include="..\start\base\scripts\options_panel.lua">
+      <Filter>base\lua</Filter>
+    </None>
+  </ItemGroup>
+</Project>

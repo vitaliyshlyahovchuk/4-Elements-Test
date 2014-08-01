@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2012 (http://www.altova.com) by AK (OOO Playrix) -->
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1DCE7F16-BA2F-4B7B-8FE7-F72974C113B8}</ProjectGuid>
+    <RootNamespace>win</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>4_Elements_Freemium</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.60315.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)..\start\win\</OutDir>
+    <IntDir>$(ProjectDir)bin\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <EmbedManifest>false</EmbedManifest>
+    <ReferencePath>$(VCInstallDir)atlmfc\lib;$(VCInstallDir)lib</ReferencePath>
+    <TargetName>$(ProjectName)_Debug</TargetName>
+    <IncludePath>$(ProjectDir)..\src\card;$(IncludePath)</IncludePath>
+    <SourcePath>$(ProjectDir)..\src\card;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)..\start\win\</OutDir>
+    <IntDir>$(ProjectDir)bin\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <EmbedManifest>false</EmbedManifest>
+    <IncludePath>$(ProjectDir)..\src\card;$(IncludePath)</IncludePath>
+    <SourcePath>$(ProjectDir)..\src\card;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(LIBROOT)\DirectX SDK\include;$(LIBROOT)\theora\include;$(LIBROOT)\vorbis\include;$(LIBROOT)\ogg\include;$(LIBROOT)\zlib\include;$(LIBROOT)\boost;$(LIBROOT)\luabind\include;$(LIBROOT)\lua\include;$(LIBROOT)\jpeg-turbo\include;$(LIBROOT)\png\include;$(LIBROOT)\OpenAL\include;$(LIBROOT)\utfcpp\include;$(LIBROOT)\angle\include;$(LIBROOT)\freetype\include;$(ENGINEROOT)\include;src;..\src;..\src\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;CURL_STATICLIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <StringPooling>
+      </StringPooling>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions>/Zm200 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <Link>
+      <AdditionalDependencies>libEGL.lib;libGLESv2.lib;Version.lib;dxguid.lib;comctl32.lib;luad.lib;luabindd.lib;pngd.lib;turbojpeg-static.lib;psapi.lib;shell32.lib;advapi32.lib;user32.lib;gdi32.lib;comdlg32.lib;zlibd.lib;Engined.lib;OpenAL32.lib;Dbghelp.lib;oggd.lib;theorad.lib;vorbisd.lib;WS2_32.lib;freetype.a;PVRTC.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName)_Debug.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(LIBROOT)\zlib\lib\vc10;$(LIBROOT)\DirectX SDK\lib\x86;$(LIBROOT)\jpeg-turbo\lib;$(LIBROOT)\png\lib\vc10;$(LIBROOT)\lua\lib\vc10;$(LIBROOT)\luabind\lib\vc11;$(LIBROOT)\ogg\lib\vc10;$(LIBROOT)\vorbis\lib\vc10;$(LIBROOT)\theora\lib\vc10;$(LIBROOT)\OpenAL\libs\Win32;$(LIBROOT)\boost\stage\lib;$(LIBROOT)\freetype\lib;$(LIBROOT)\angle\lib;$(ENGINEROOT)\bin\vc2012;$(LIBROOT)\PVRTC\Windows_x86_32\Lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>$(LIBROOT)\DirectX SDK\include;$(LIBROOT)\theora\include;$(LIBROOT)\vorbis\include;$(LIBROOT)\ogg\include;$(LIBROOT)\zlib\include;$(LIBROOT)\boost;$(LIBROOT)\luabind\include;$(LIBROOT)\lua\include;$(LIBROOT)\jpeg-turbo\include;$(LIBROOT)\png\include;$(LIBROOT)\OpenAL\include;$(LIBROOT)\utfcpp\include;$(LIBROOT)\angle\include;$(LIBROOT)\freetype\include;$(ENGINEROOT)\include;src;..\src;..\src\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;DX9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalOptions>/Zm200 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libEGL.lib;libGLESv2.lib;Version.lib;dxguid.lib;comctl32.lib;lua.lib;luabind.lib;png.lib;freetype.a;turbojpeg-static.lib;psapi.lib;shell32.lib;advapi32.lib;user32.lib;gdi32.lib;comdlg32.lib;zlib.lib;ogg.lib;vorbis.lib;theora.lib;Engine.lib;OpenAL32.lib;Dbghelp.lib;WS2_32.lib;PVRTC.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(LIBROOT)\zlib\lib\vc10;$(LIBROOT)\DirectX SDK\lib\x86;$(LIBROOT)\jpeg-turbo\lib;$(LIBROOT)\png\lib\vc10;$(LIBROOT)\lua\lib\vc10;$(LIBROOT)\luabind\lib\vc11;$(LIBROOT)\ogg\lib\vc10;$(LIBROOT)\vorbis\lib\vc10;$(LIBROOT)\theora\lib\vc10;$(LIBROOT)\OpenAL\libs\Win32;$(LIBROOT)\boost\stage\lib;$(LIBROOT)\freetype\lib;$(LIBROOT)\angle\lib;$(ENGINEROOT)\bin\vc2012;$(LIBROOT)\PVRTC\Windows_x86_32\Lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libci.lib;msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Data">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Xml">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\ArrowEffects.cpp" />
+    <ClCompile Include="..\src\BlurScreen.cpp" />
+    <ClCompile Include="..\src\BoostersTransitionWidget.cpp" />
+    <ClCompile Include="..\src\BoostKinds.cpp" />
+    <ClCompile Include="..\src\card\CardFlashAnimationPlayer.cpp" />
+    <ClCompile Include="..\src\card\Shine.cpp" />
+    <ClCompile Include="..\src\CellWalls.cpp" />
+    <ClCompile Include="..\src\CheckBoxEx.cpp" />
+    <ClCompile Include="..\src\ChipDistortions.cpp" />
+    <ClCompile Include="..\src\ChipSource.cpp" />
+    <ClCompile Include="..\src\card\AvatarContainer.cpp" />
+    <ClCompile Include="..\src\card\BigBackground.cpp" />
+    <ClCompile Include="..\src\card\CardFactory.cpp" />
+    <ClCompile Include="..\src\card\CardResourceManager.cpp" />
+    <ClCompile Include="..\src\card\Container.cpp" />
+    <ClCompile Include="..\src\card\Gateway.cpp" />
+    <ClCompile Include="..\src\card\LevelMarker.cpp" />
+    <ClCompile Include="..\src\card\Map.cpp" />
+    <ClCompile Include="..\src\card\MapItem.cpp" />
+    <ClCompile Include="..\src\card\ParalaxCloud.cpp" />
+    <ClCompile Include="..\src\card\SpriteCardItem.cpp" />
+    <ClCompile Include="..\src\card\StaticImage.cpp" />
+    <ClCompile Include="..\src\card\UpdateLevelItem.cpp" />
+    <ClCompile Include="..\src\DataStoreWithRapid.cpp" />
+    <ClCompile Include="..\src\LiveCounter.cpp" />
+    <ClCompile Include="..\src\SwrveManager.cpp" />
+    <ClCompile Include="..\src\FlashUserAvatar.cpp" />
+    <ClCompile Include="..\src\FriendInfo.cpp" />
+    <ClCompile Include="..\src\BaseEditorMaker.cpp" />
+    <ClCompile Include="..\src\ChipsInfo.cpp" />
+    <ClCompile Include="..\src\ClickMessageEdit.cpp" />
+    <ClCompile Include="..\src\CombinedBonus.cpp" />
+    <ClCompile Include="..\src\Combobox.cpp" />
+    <ClCompile Include="..\src\DebugSelectLevel.cpp" />
+    <ClCompile Include="..\src\DetectBorder2D.cpp" />
+    <ClCompile Include="..\src\EditorPanel.cpp" />
+    <ClCompile Include="..\src\EditorUtils.cpp" />
+    <ClCompile Include="..\src\EffectWay.cpp" />
+    <ClCompile Include="..\src\Energy.cpp" />
+    <ClCompile Include="..\src\FieldBears.cpp" />
+    <ClCompile Include="..\src\FieldStyles.cpp" />
+    <ClCompile Include="..\src\FlyingThing.cpp" />
+    <ClCompile Include="..\src\FlyTextBySpline.cpp" />
+    <ClCompile Include="..\src\FreeFront.cpp" />
+    <ClCompile Include="..\src\FUUUTester.cpp" />
+    <ClCompile Include="..\src\GameBonus.cpp" />
+    <ClCompile Include="..\src\GameBonuses.cpp" />
+    <ClCompile Include="..\src\GameColor.cpp" />
+    <ClCompile Include="..\src\GameFillBonus.cpp" />
+    <ClCompile Include="..\src\GameLightningController.cpp" />
+    <ClCompile Include="..\src\GameScriptMap.cpp" />
+    <ClCompile Include="..\src\GameTask.cpp" />
+    <ClCompile Include="..\src\GroundInfo.cpp" />
+    <ClCompile Include="..\src\GameOrder.cpp" />
+    <ClCompile Include="..\src\IslandArrows.cpp" />
+    <ClCompile Include="..\src\LevelEnd.cpp" />
+    <ClCompile Include="..\src\LevelEndEffects.cpp" />
+    <ClCompile Include="..\src\LevelInfoManager.cpp" />
+    <ClCompile Include="..\src\LockBarriers.cpp" />
+    <ClCompile Include="..\src\Match3.cpp" />
+    <ClCompile Include="..\src\Match3Background.cpp" />
+    <ClCompile Include="..\src\Match3Border.cpp" />
+    <ClCompile Include="..\src\Match3Gadgets.cpp" />
+    <ClCompile Include="..\src\Match3Spirit.cpp" />
+    <ClCompile Include="..\src\MaybeMoveHint.cpp" />
+    <ClCompile Include="..\src\MovingMonster.cpp" />
+    <ClCompile Include="..\src\PictureGenerator.cpp" />
+    <ClCompile Include="..\src\Place2D.cpp" />
+    <ClCompile Include="..\src\PostEffectWave.cpp" />
+    <ClCompile Include="..\src\ReceiverEffects.cpp" />
+    <ClCompile Include="..\src\RoomGates.cpp" />
+    <ClCompile Include="..\src\SelectingChip.cpp" />
+    <ClCompile Include="..\src\ShaderMaterial.cpp" />
+    <ClCompile Include="..\src\SnapGadgetElements.cpp" />
+    <ClCompile Include="..\src\SplineBezier.cpp" />
+    <ClCompile Include="..\src\SquareNewInfo.cpp" />
+    <ClCompile Include="..\src\StarArrowFlyEffect.cpp" />
+    <ClCompile Include="..\src\StaticArray.cpp" />
+    <ClCompile Include="..\src\TimeFactorWidget.cpp" />
+    <ClCompile Include="..\src\Tutorial.cpp" />
+    <ClCompile Include="..\src\TutorialEffects.cpp" />
+    <ClCompile Include="..\src\TutorialFlashObjects.cpp" />
+    <ClCompile Include="..\src\UndergoundPrizes.cpp" />
+    <ClCompile Include="..\src\WallDrawer.cpp" />
+    <ClCompile Include="..\src\card\CardWidget.cpp" />
+    <ClCompile Include="..\src\DynamicScroller.cpp" />
+    <ClCompile Include="..\src\EditBoxEx.cpp" />
+    <ClCompile Include="src\WinMain.cpp" />
+    <ClCompile Include="..\src\MyApplication.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="..\src\EnergyReceiver.cpp" />
+    <ClCompile Include="..\src\Game.cpp" />
+    <ClCompile Include="..\src\GameChipExplodeRemover.cpp" />
+    <ClCompile Include="..\src\GameChipRemover.cpp" />
+    <ClCompile Include="..\src\GameField.cpp" />
+    <ClCompile Include="..\src\GameFieldAddress.cpp" />
+    <ClCompile Include="..\src\GameFieldController.cpp" />
+    <ClCompile Include="..\src\GameFieldControllers.cpp" />
+    <ClCompile Include="..\src\GameFieldWidget.cpp" />
+    <ClCompile Include="..\src\BombField.cpp" />
+    <ClCompile Include="..\src\EnergyReceivers.cpp" />
+    <ClCompile Include="..\src\LevelColors.cpp" />
+    <ClCompile Include="..\src\RyushkiGadget.cpp" />
+    <ClCompile Include="..\src\SnapGadgetsClass.cpp" />
+    <ClCompile Include="..\src\GameSquare.cpp" />
+    <ClCompile Include="..\src\Ryushka.cpp" />
+    <ClCompile Include="..\src\RyushkaFaerie.cpp" />
+    <ClCompile Include="..\src\RyushkaGroup.cpp" />
+    <ClCompile Include="..\src\RyushkaSelect.cpp" />
+    <ClCompile Include="..\src\ActCounter.cpp" />
+    <ClCompile Include="..\src\Match3Loot.cpp" />
+    <ClCompile Include="..\src\ChangeEnergySpeedClass.cpp" />
+    <ClCompile Include="..\src\GameInfo.cpp" />
+    <ClCompile Include="..\src\MousePosWidget.cpp" />
+    <ClCompile Include="..\src\ParticleEffectWrapper.cpp" />
+    <ClCompile Include="..\src\PlayerStatistic.cpp" />
+    <ClCompile Include="..\src\RenderTargetHolder.cpp" />
+    <ClCompile Include="..\src\ScrollableSelectorWidget.cpp" />
+    <ClCompile Include="..\src\SimpleSlider.cpp" />
+    <ClCompile Include="..\src\SomeOperators.cpp" />
+    <ClCompile Include="..\src\Spacing2D.cpp" />
+    <ClCompile Include="..\src\Splash.cpp" />
+    <ClCompile Include="..\src\stdafx.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\src\StripEffect.cpp" />
+    <ClCompile Include="..\src\Tooltip.cpp" />
+    <ClCompile Include="..\src\EditorFileList.cpp" />
+    <ClCompile Include="src\EditorWidget.cpp" />
+    <ClInclude Include="..\src\ArrowEffects.h" />
+    <ClInclude Include="..\src\BlurScreen.h" />
+    <ClInclude Include="..\src\BoostersTransitionWidget.h" />
+    <ClInclude Include="..\src\BoostKinds.h" />
+    <ClInclude Include="..\src\card\CardFlashAnimationPlayer.h" />
+    <ClInclude Include="..\src\card\Shine.h" />
+    <ClInclude Include="..\src\CellWalls.h" />
+    <ClInclude Include="..\src\CheckBoxEx.h" />
+    <ClInclude Include="..\src\ChipDistortions.h" />
+    <ClInclude Include="..\src\ChipSource.h" />
+    <ClInclude Include="..\src\BaseEditorMaker.h" />
+    <ClInclude Include="..\src\ChipsInfo.h" />
+    <ClInclude Include="..\src\ClickMessageEdit.h" />
+    <ClInclude Include="..\src\CombinedBonus.h" />
+    <ClInclude Include="..\src\Combobox.h" />
+    <ClInclude Include="..\src\card\AvatarContainer.h" />
+    <ClInclude Include="..\src\card\BigBackground.h" />
+    <ClInclude Include="..\src\card\CardFactory.h" />
+    <ClInclude Include="..\src\card\CardResourceManager.h" />
+    <ClInclude Include="..\src\card\Container.h" />
+    <ClInclude Include="..\src\card\Gateway.h" />
+    <ClInclude Include="..\src\card\LevelMarker.h" />
+    <ClInclude Include="..\src\card\Map.h" />
+    <ClInclude Include="..\src\card\MapItem.h" />
+    <ClInclude Include="..\src\card\ParalaxCloud.h" />
+    <ClInclude Include="..\src\card\SpriteCardItem.h" />
+    <ClInclude Include="..\src\card\StaticImage.h" />
+    <ClInclude Include="..\src\card\UpdateLevelItem.h" />
+    <ClInclude Include="..\src\DataStoreWithRapid.h" />
+    <ClInclude Include="..\src\SwrveManager.h" />
+    <ClInclude Include="..\src\DebugSelectLevel.h" />
+    <ClInclude Include="..\src\DetectBorder2D.h" />
+    <ClInclude Include="..\src\DynamicArray.h" />
+    <ClInclude Include="..\src\DynamicArray2D.h" />
+    <ClInclude Include="..\src\EditorPanel.h" />
+    <ClInclude Include="..\src\EditorUtils.h" />
+    <ClInclude Include="..\src\EffectWay.h" />
+    <ClInclude Include="..\src\Energy.h" />
+    <ClInclude Include="..\src\FieldBears.h" />
+    <ClInclude Include="..\src\FieldStyles.h" />
+    <ClInclude Include="..\src\FlyingThing.h" />
+    <ClInclude Include="..\src\FlyTextBySpline.h" />
+    <ClInclude Include="..\src\FreeFront.h" />
+    <ClInclude Include="..\src\FUUUTester.h" />
+    <ClInclude Include="..\src\GameBonus.h" />
+    <ClInclude Include="..\src\GameBonuses.h" />
+    <ClInclude Include="..\src\GameFillBonus.h" />
+    <ClInclude Include="..\src\GameLightningController.h" />
+    <ClInclude Include="..\src\GameScriptMap.h" />
+    <ClInclude Include="..\src\GameTask.h" />
+    <ClInclude Include="..\src\GroundInfo.h" />
+    <ClInclude Include="..\src\GameOrder.h" />
+    <ClInclude Include="..\src\IslandArrows.h" />
+    <ClInclude Include="..\src\LevelEnd.h" />
+    <ClInclude Include="..\src\LiveCounter.h" />
+    <ClInclude Include="..\src\LevelEndEffects.h" />
+    <ClInclude Include="..\src\LevelInfoManager.h" />
+    <ClInclude Include="..\src\LockBarriers.h" />
+    <ClInclude Include="..\src\Match3.h" />
+    <ClInclude Include="..\src\Match3Background.h" />
+    <ClInclude Include="..\src\Match3Border.h" />
+    <ClInclude Include="..\src\Match3Gadgets.h" />
+    <ClInclude Include="..\src\Match3Spirit.h" />
+    <ClInclude Include="..\src\MaybeMoveHint.h" />
+    <ClInclude Include="..\src\MovingMonster.h" />
+    <ClInclude Include="..\src\PictureGenerator.h" />
+    <ClInclude Include="..\src\Place2D.h" />
+    <ClInclude Include="..\src\PostEffectWave.h" />
+    <ClInclude Include="..\src\ReceiverEffects.h" />
+    <ClInclude Include="..\src\RoomGates.h" />
+    <ClInclude Include="..\src\SelectingChip.h" />
+    <ClInclude Include="..\src\ShaderMaterial.h" />
+    <ClInclude Include="..\src\SnapGadgetElements.h" />
+    <ClInclude Include="..\src\SplineBezier.h" />
+    <ClInclude Include="..\src\SquareNewInfo.h" />
+    <ClInclude Include="..\src\StarArrowFlyEffect.h" />
+    <ClInclude Include="..\src\StaticArray.h" />
+    <ClInclude Include="..\src\TimeFactorWidget.h" />
+    <ClInclude Include="..\src\Tutorial.h" />
+    <ClInclude Include="..\src\TutorialEffects.h" />
+    <ClInclude Include="..\src\TutorialFlashObjects.h" />
+    <ClInclude Include="..\src\UndergoundPrizes.h" />
+    <ClInclude Include="..\src\WallDrawer.h" />
+    <ClInclude Include="..\src\MyApplication.h" />
+    <ClInclude Include="..\src\EnergyReceiver.h" />
+    <ClInclude Include="..\src\Game.h" />
+    <ClInclude Include="..\src\GameChipExplodeRemover.h" />
+    <ClInclude Include="..\src\GameChipRemover.h" />
+    <ClInclude Include="..\src\GameColor.h" />
+    <ClInclude Include="..\src\GameField.h" />
+    <ClInclude Include="..\src\GameFieldAddress.h" />
+    <ClInclude Include="..\src\GameFieldController.h" />
+    <ClInclude Include="..\src\GameFieldControllers.h" />
+    <ClInclude Include="..\src\GameFieldWidget.h" />
+    <ClInclude Include="..\src\BombField.h" />
+    <ClInclude Include="..\src\EnergyReceivers.h" />
+    <ClInclude Include="..\src\LevelColors.h" />
+    <ClInclude Include="..\src\RyushkiGadget.h" />
+    <ClInclude Include="..\src\SnapGadgetsClass.h" />
+    <ClInclude Include="..\src\GameSquare.h" />
+    <ClInclude Include="..\src\Ryushka.h" />
+    <ClInclude Include="..\src\RyushkaFaerie.h" />
+    <ClInclude Include="..\src\RyushkaGroup.h" />
+    <ClInclude Include="..\src\RyushkaSelect.h" />
+    <ClInclude Include="..\src\ActCounter.h" />
+    <ClInclude Include="..\src\Match3Loot.h" />
+    <ClInclude Include="..\src\Array2D.h" />
+    <ClInclude Include="..\src\ChangeEnergySpeedClass.h" />
+    <ClInclude Include="..\src\GameInfo.h" />
+    <ClInclude Include="..\src\LoadScreenWidget.h" />
+    <ClInclude Include="..\src\MousePosWidget.h" />
+    <ClInclude Include="..\src\ParticleEffectWrapper.h" />
+    <ClInclude Include="..\src\PlayerStatistic.h" />
+    <ClInclude Include="..\src\RenderTargetHolder.h" />
+    <ClInclude Include="..\src\resource.h" />
+    <ClInclude Include="..\src\ScrollableSelectorWidget.h" />
+    <ClInclude Include="..\src\SimpleSlider.h" />
+    <ClInclude Include="..\src\SomeOperators.h" />
+    <ClInclude Include="..\src\Spacing2D.h" />
+    <ClInclude Include="..\src\Splash.h" />
+    <ClInclude Include="..\src\stdafx.h" />
+    <ClInclude Include="..\src\StripEffect.h" />
+    <ClInclude Include="..\src\TextureMesh.h" />
+    <ClInclude Include="..\src\Tooltip.h" />
+    <ClInclude Include="..\src\EditorFileList.h" />
+    <ClInclude Include="..\src\card\CardWidget.h" />
+    <ClInclude Include="..\src\FlashUserAvatar.h" />
+    <ClInclude Include="..\src\FriendInfo.h" />
+    <ClInclude Include="..\src\DynamicScroller.h" />
+    <ClInclude Include="..\src\EditBoxEx.h" />
+    <ClInclude Include="src\EditorWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\src\MagicGame.rc" />
+    <ResourceCompile Include="..\src\res.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\mac\Settings.xml" />
+    <Xml Include="..\start\base\CardResource.xml" />
+    <Xml Include="..\start\base\Card_GUI.xml" />
+    <Xml Include="..\start\base\CommonRes.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="..\start\base\DebugLayerGui.xml" />
+    <Xml Include="..\start\base\Editor\EditorRes.xml" />
+    <Xml Include="..\start\base\Editor\Editor_GUI.xml" />
+    <Xml Include="..\start\base\Effects\AltarsEffects.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="..\start\base\Effects\Match3Effect.xml" />
+    <Xml Include="..\start\base\Effects\star.xml" />
+    <Xml Include="..\start\base\FlashResources.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="..\start\base\FlyingBoosters.xml" />
+    <Xml Include="..\start\base\fonts.xml" />
+    <Xml Include="..\start\base\GameDescriptions.xml" />
+    <Xml Include="..\start\base\GamePanel.xml" />
+    <Xml Include="..\start\base\GameResource.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="..\start\base\GameResource_ipad.xml" />
+    <Xml Include="..\start\base\GameResource_ipad_retina.xml" />
+    <Xml Include="..\start\base\GameResource_iphone.xml" />
+    <Xml Include="..\start\base\GameSettings.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="..\start\base\GameSquareRes.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="..\start\base\Game_GUI.xml" />
+    <Xml Include="..\start\base\KeyMap.xml" />
+    <Xml Include="..\start\base\LayersPreloading.xml" />
+    <Xml Include="..\start\base\LevelMap.xml" />
+    <Xml Include="..\start\base\LoadScreenGui.xml" />
+    <Xml Include="..\start\base\maps\mapResources.xml" />
+    <Xml Include="..\start\base\Menu_GUI.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="..\start\base\Music.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="..\start\base\ParticleGroups.xml" />
+    <Xml Include="..\start\base\ResourcePreloading.xml" />
+    <Xml Include="..\start\base\Sound.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="..\start\base\SpisokRyushek.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\start\base\scripts\askHelp.lua" />
+    <None Include="..\start\base\scripts\boostBuy.lua" />
+    <None Include="..\start\base\scripts\boostConfirm.lua" />
+    <None Include="..\start\base\scripts\card.lua" />
+    <None Include="..\start\base\scripts\card_gui.lua" />
+    <None Include="..\start\base\scripts\checkTexts.lua" />
+    <None Include="..\start\base\scripts\commonFunction.lua" />
+    <None Include="..\start\base\scripts\dialogs.lua" />
+    <None Include="..\start\base\scripts\facebookConnect.lua" />
+    <None Include="..\start\base\scripts\facebookPanel.lua" />
+    <None Include="..\start\base\scripts\findKey.lua" />
+    <None Include="..\start\base\scripts\game.lua" />
+    <None Include="..\start\base\scripts\gateComplete.lua" />
+    <None Include="..\start\base\scripts\globals.lua" />
+    <None Include="..\start\base\scripts\gui.lua" />
+    <None Include="..\start\base\scripts\levelComplete.lua" />
+    <None Include="..\start\base\scripts\levelFail.lua" />
+    <None Include="..\start\base\scripts\levelFailRetry.lua" />
+    <None Include="..\start\base\scripts\levelStart.lua" />
+    <None Include="..\start\base\scripts\livePanel.lua" />
+    <None Include="..\start\base\scripts\load_screen.lua" />
+    <None Include="..\start\base\scripts\marketingActions.lua" />
+    <None Include="..\start\base\scripts\match3_panels.lua" />
+    <None Include="..\start\base\scripts\menuInGame.lua" />
+    <None Include="..\start\base\scripts\messageCenter.lua" />
+    <None Include="..\start\base\scripts\needLive.lua" />
+    <None Include="..\start\base\scripts\needTicket.lua" />
+    <None Include="..\start\base\scripts\notificationSettings.lua" />
+    <None Include="..\start\base\scripts\optionsDialog.lua" />
+    <None Include="..\start\base\scripts\panelEffects.lua" />
+    <None Include="..\start\base\scripts\preload_start.lua" />
+    <None Include="..\start\base\scripts\quit_level.lua" />
+    <None Include="..\start\base\scripts\selectFile.lua" />
+    <None Include="..\start\base\scripts\shopPanel.lua" />
+    <None Include="..\start\base\scripts\simple_text.lua" />
+    <None Include="..\start\base\scripts\start.lua" />
+    <None Include="..\start\base\scripts\tutorial.lua" />
+    <None Include="..\start\base\scripts\tutorials\TutorLevel_1.lua" />
+    <None Include="..\start\base\scripts\tutorials\TutorLevel_11.lua" />
+    <None Include="..\start\base\scripts\tutorials\TutorLevel_2.lua" />
+    <None Include="..\start\base\scripts\tutorials\TutorLevel_4.lua" />
+    <None Include="..\start\base\scripts\tutorials\TutorLevel_5.lua" />
+    <None Include="..\start\base\scripts\tutorials\TutorLevel_7.lua" />
+    <None Include="..\start\base\scripts\utils.lua" />
+    <None Include="..\start\base\scripts\options_panel.lua" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
