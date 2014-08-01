@@ -1,0 +1,6 @@
+bin
+ipch
+*.opensdf
+*.sdf
+*.user
+*.suo
