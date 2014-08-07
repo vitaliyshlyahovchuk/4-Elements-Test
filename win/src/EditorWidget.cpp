@@ -444,7 +444,16 @@ namespace EditorUtils
 							sq->GetChip().SetMusor(true);
 						}
 					}
-				} 
+				}
+				else if (EditorUtils::activeEditBtn == EditorUtils::ChipCyclops)
+				{
+					if (Game::isVisible(sq))
+					{
+						sq->Reset();
+						sq->SetCyclops(true);
+						sq->GetChip().SetGroundCyclops();
+					}
+				}
 				else if (EditorUtils::activeEditBtn == EditorUtils::AddIce)
 				{
 					if (Game::isVisible(sq))
