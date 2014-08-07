@@ -95,6 +95,8 @@ void DrawField()
 	Gadgets::wallDrawer.DrawStone();
 	GameField::StartStencilWrite(0xB0, 0xF0);
 	Gadgets::wallDrawer.DrawIce();
+	GameField::StartStencilWrite(0xB0, 0xF0);
+	Gadgets::wallDrawer.DrawCyclops();
 	Render::device.SetStencilTest(false);
 
 	Gadgets::wallDrawer.DrawWood();
@@ -150,6 +152,8 @@ void DrawField()
 		Gadgets::wallDrawer.DrawIceBorders();
 		GameField::StartStencilTest(Render::StencilFunc::NOTEQUAL, 0xB0, 0xF0); // ...а границы стен поверх льда
 		Gadgets::wallDrawer.DrawStoneBorders();
+		GameField::StartStencilTest(Render::StencilFunc::NOTEQUAL, 0xB0, 0xF0);
+		Gadgets::wallDrawer.DrawCyclopsBorders();
 		Render::device.SetStencilTest(false);
 
 

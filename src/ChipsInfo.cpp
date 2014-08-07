@@ -159,10 +159,15 @@ namespace Gadgets
 			if( Game::isVisible(sq) && (sq->barrierIndex == -1) )
 			{
 				sq->GetChip().SetInfo(itr->second, itr->first.ToPoint());
-				if(itr->second.star > 0 || itr->second.treasure > 0)
-					{
-						sq->SetWall(0);
-					}
+				if (itr->second.star > 0 || itr->second.treasure > 0)
+				{
+					sq->SetWall(0);
+				}
+				if (itr->second.type == Game::ChipColor::GROUND_CYCLOPS)
+				{
+					sq->SetCyclops(true);
+					sq->ChangeCyclopsState(Game::Square::CYCLOPS_STATE_APPEAR_WITHOUT_GROW);
+				}
 			}
 			if(itr->second.IsEmpty()) {
 				_info.erase(itr++);
@@ -393,6 +398,20 @@ namespace Gadgets
 				_info[sq->address].level_hang.MakeBomb(1, 1);
 			}
 			Apply();
+		}
+		else if (EditorUtils::activeEditBtn == EditorUtils::ChipCyclops)
+		{
+			if (info.type != Game::ChipColor::GROUND_CYCLOPS)
+			{
+				info.type = Game::ChipColor::GROUND_CYCLOPS;
+				info.star = 0;
+				info.adapt = false;
+				info.pre_chip = -1;
+				info.pre_chameleon = false;
+				info.level_hang.Clear();
+				Apply();
+				return true;
+			}	
 		}
 		return false;
 	}

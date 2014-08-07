@@ -41,12 +41,16 @@ void WallDrawer::Init(rapidxml::xml_node<> *xml_root)
 	_textureJava = Core::resourceManager.Get<Render::Texture>("JavaRepeate");
 	_textureJava->setFilteringType(Render::Texture::BILINEAR);
 	_textureJava->setAddressType(Render::Texture::REPEAT);
+
+	_textureCyclops = Core::resourceManager.Get<Render::Texture>("CyclopsRepeat");
+	_textureCyclops->setFilteringType(Render::Texture::BILINEAR);
+	_textureCyclops->setAddressType(Render::Texture::REPEAT);
 	
 
 	Place2D::Init(xml_root);	
 	_exist_sand = _exist_grow_wall = _exist__wall_fabric = _exist_energy_wall = _exist_indestructible = _exist_fill_order = _exist_permanent = false;
 	_exist_wall2 = _exist_wall3 = false;
-	_exist_wood = _exist_ice = false;
+	_exist_wood = _exist_ice = _exist_cyclops = false;
 }
 
 WallDrawer::~WallDrawer()
@@ -158,7 +162,12 @@ bool is_stone(Game::Square *sq)
 
 bool is_ice(Game::Square *sq)
 {
-	return sq->IsIce() && is_visible(sq);
+	return sq->IsIce() && is_visible(sq) && !sq->IsCyclops();
+}
+
+bool is_cyclops(Game::Square *sq)
+{
+	return sq->IsCyclops() && is_visible(sq);
 }
 
 bool is_indestructible(Game::Square *sq)
@@ -382,6 +391,32 @@ void WallDrawer::DrawWoodBorders()
 	Place2D::DrawBorders(Place2D::wood_borders, "wood");
 }
 
+void WallDrawer::DrawCyclops()
+{
+	if (!_exist_cyclops)
+	{
+		return;
+	}
+	Place2D::SetParams(0.3f, 0.4f, 0.5f);
+	Place2D::cyclops_borders.clear();
+	Place2D::Clear();
+	Place2D::BindBorders(&Place2D::cyclops_borders);
+
+	Render::device.PushMatrix();
+	Render::device.MatrixTranslate(math::Vector3(0.f, 0.f, 0.0f));
+	ProcessPlace(is_cyclops, is_true, _textureCyclops, Color::WHITE, "cyclops", GameSettings::CELL_RECT, ZBuf::CYCLOPS, true);
+	Render::device.PopMatrix();
+}
+
+void WallDrawer::DrawCyclopsBorders()
+{
+	if (!_exist_cyclops)
+	{
+		return;
+	}
+	Place2D::DrawBorders(Place2D::cyclops_borders, "cyclops");
+}
+
 bool is_visible_for_sand(Game::Square *sq)
 {
 	return is_visible(sq) && (sq->GetWall() == 0 || (sq->GetSandTime() > 0));
@@ -408,7 +443,7 @@ void WallDrawer::DrawStone()
 
 	Render::device.PushMatrix();
 	Render::device.MatrixTranslate(math::Vector3(0.f, 0.f, 0.0f));
-	ProcessPlace(is_stone, is_true, _textureStone, Color::WHITE, "stone", GameSettings::CELL_RECT*2, ZBuf::STONE, true);
+	ProcessPlace(is_stone, is_true, _textureStone, Color::WHITE, "stone", GameSettings::CELL_RECT*2, ZBuf::ICE, true);
 	Render::device.PopMatrix();
 
 }
@@ -461,7 +496,7 @@ void WallDrawer::InitAfterLoadLevel()
 {
 	_exist_sand = _exist_grow_wall = _exist__wall_fabric = _exist_energy_wall = _exist_indestructible = _exist_fill_order = EditorUtils::editor;
 	_exist_wall2 = _exist_wall3 = EditorUtils::editor;
-	_exist_wood = _exist_ice = EditorUtils::editor;
+	_exist_wood = _exist_ice = _exist_cyclops = EditorUtils::editor;
 	size_t count = GameSettings::squares.size();
 	for(size_t i = 0; i < count; i++)
 	{
@@ -477,6 +512,7 @@ void WallDrawer::InitAfterLoadLevel()
 		_exist_wall2 = _exist_wall2 || _exist_wall3 || sq->GetWall() == 2;
 		_exist_wood = _exist_wood || sq->GetWood() > 0;
 		_exist_ice = _exist_ice || sq->IsIce();
+		_exist_cyclops = _exist_cyclops || sq->IsCyclops();
 	}
 }
 

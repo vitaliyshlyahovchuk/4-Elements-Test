@@ -130,7 +130,9 @@ namespace Game {
 		bool _isFrontFreeChecked;
 
 		//Энергия дотекла в клетку
-		bool _isEnergyChecked; 
+		bool _isEnergyChecked;
+
+		bool _isCyclops;
 		
 	public:
 
@@ -225,6 +227,7 @@ namespace Game {
 		bool IsIce() const;
 		void SetStone(bool stone);
 		bool IsCanChainsOnStart() const;
+		bool IsCyclops() const;
 
 		bool IsShortSquare() const;
 		void InitEnergyParameters();
@@ -323,6 +326,20 @@ namespace Game {
 		float _energyCheckTimer;
 
 		boost::shared_ptr<LockBarrierBase> _lockWithOrder;
+
+		//Ground Cyclops
+		float	_cyclops_change_state_timer;//таймер для смены состояния
+		float	_cyclops_current_action_timer;//таймер апдейта состояния
+		float	_cyclops_current_action_duration;
+		int		_cyclops_next_needed_state;//следующее необходимое состояния
+		FPoint  _eye_offset_delta;
+
+		void UpdateCyclops(float dt);
+		void UpdateCyclopsAction(float dt);
+		void PlayLookLeft(float dt);
+		void PlayLookRight(float dt);
+		void PlayLookRightLeft(float dt);
+		void PlayLookLeftRight(float dt);
 	public:
 		//
 		// Инициализировать в конcтрукторе (т.к. у наc 2 конcтруктора)
@@ -422,6 +439,21 @@ namespace Game {
 		int MakeMask();
 		void CheckMask();
 		bool IsAddToDownDraw() const;
+
+		//Ground Cyclops
+		enum CyclopsState
+		{
+			CYCLOPS_STATE_NONE,
+			CYCLOPS_STATE_GROW,
+			CYCLOPS_STATE_APPEAR_WITHOUT_GROW,
+			CYCLOPS_STATE_BLINK,
+			CYCLOPS_STATE_LOOK_LEFT,
+			CYCLOPS_STATE_LOOK_RIGHT,
+			CYCLOPS_STATE_LOOK_RIGHT_LEFT,
+			CYCLOPS_STATE_LOOK_LEFT_RIGHT,
+		} _current_cyclops_state;
+		void ChangeCyclopsState(int new_state);
+		void SetCyclops(bool is_cyclops);
 	};
 
 	bool isSquare(const Game::FieldAddress& address);

@@ -1013,6 +1013,7 @@ void GameField::DrawField()
 
 	Gadgets::wallDrawer.DrawStone();
 	Gadgets::wallDrawer.DrawIce();
+	Gadgets::wallDrawer.DrawCyclops();
 
 	Gadgets::wallDrawer.DrawWood();
 	Gadgets::wallDrawer.DrawGround();
@@ -1071,6 +1072,7 @@ void GameField::DrawField()
 		//GameField::StartStencilTest(Render::StencilFunc::NOTEQUAL, 0xB0, 0xF0); // ...а границы стен поверх льда
 		Gadgets::wallDrawer.DrawStoneBorders();
 		//Render::device.SetStencilTest(false);
+		Gadgets::wallDrawer.DrawCyclopsBorders();
 
 
 
@@ -1211,7 +1213,7 @@ void GameField::DrawField()
 }
 
 void GameField::Draw()
-{ 
+{
 	bool drawToTarget = hasWavesInScreen();
 
 	if( drawToTarget )
@@ -2223,7 +2225,8 @@ void GameField::UpdateSquares(float dt)
 {
 	Match3::FallColumnsOnUpdate();
 
-	bool need_collect_wall_squares = GameSettings::need_inc_wall_squares == 2 && IsStandby();
+	bool is_stand_by = IsStandby();
+	bool need_collect_wall_squares = GameSettings::need_inc_wall_squares == 2 && is_stand_by;
 
 	Game::chipsStandby = true;
 
@@ -2231,6 +2234,7 @@ void GameField::UpdateSquares(float dt)
 
 	int numSqWithEnergy = 0;
 	std::vector<Game::Square*> growingWallSquares;
+	std::vector<Game::Square*> groundCyclopsSquares;
 
 	// Ниже код обновления фишек поля
 	Game::ChipColor::chipSeqIsEmpty = _chipSeq.empty();
@@ -2251,6 +2255,11 @@ void GameField::UpdateSquares(float dt)
 		if(visible && need_collect_wall_squares && s->IsGrowingWall())
 		{
 			growingWallSquares.push_back(s);
+		}
+
+		if (visible && GameSettings::need_inc_ground_cycops && s->IsCyclops() && is_stand_by)
+		{
+			groundCyclopsSquares.push_back(s);
 		}
 
 		if (Energy::field.EnergyExists(s->address))
@@ -2306,6 +2315,42 @@ void GameField::UpdateSquares(float dt)
 		}
 		GameSettings::need_inc_wall_squares = 0;
 	}
+
+	//raise ground cyclops
+	if (!groundCyclopsSquares.empty())
+	{
+		std::vector<Game::Square*> ground_cyclops_neighbours;
+		size_t ground_cyclops_count = groundCyclopsSquares.size();
+		const Game::FieldAddress dirs[4] = { Game::FieldAddress::UP, Game::FieldAddress::DOWN, Game::FieldAddress::LEFT, Game::FieldAddress::RIGHT };
+
+		for (size_t i = 0; i < ground_cyclops_count; ++i)
+		{
+			Game::FieldAddress chip_address = groundCyclopsSquares[i]->address;
+			for (size_t j = 0; j < 4; ++j)
+			{
+				Game::Square* square = GameSettings::gamefield[chip_address + dirs[j]];
+				if (Game::isVisible(square) &&
+					!square->IsHardStand() &&
+					Game::activeRect.Contains(square->address.ToPoint()))
+				{
+					ground_cyclops_neighbours.push_back(square);
+				}
+			}
+		}
+
+		size_t ground_cyclops_neighbours_count = ground_cyclops_neighbours.size();
+		if (ground_cyclops_neighbours_count > 0)
+		{
+			Game::Square *sq = ground_cyclops_neighbours[math::random(0u, ground_cyclops_neighbours_count - 1)];
+			sq->SetCyclops(true);
+			sq->GetChip().SetGroundCyclops();
+			sq->ChangeCyclopsState(Game::Square::CYCLOPS_STATE_GROW);
+			Energy::field.UpdateSquare(sq->address);
+		}
+		
+		GameSettings::need_inc_ground_cycops = false;
+	}
+	//end raise ground cyclops
 
 	if(_needUpdateSand && IsStandby())
 	{

@@ -207,4 +207,53 @@ namespace Game
 		return true;
 	}
 
+	/*
+	* ChipAppearFromGround
+	*/
+	ChipAppearFromGround::ChipAppearFromGround(float pause, float time)
+	{
+		_timer = -pause;
+		_timerScale = 1 / time;
+	}
+
+	bool ChipAppearFromGround::Update(float dt)
+	{
+		if (_timer < 0.f)
+		{
+			_timer += dt;
+			if (_timer >= 0.f)
+			{
+				_timer = 0.f;
+			}
+		}
+		else{
+			_timer += dt*_timerScale;
+			if (_timer > 1.f)
+			{
+				_timer = 1.f;
+				return true;
+			}
+		}
+		return false;
+	}
+
+	void ChipAppearFromGround::CorrectRect(FRect &rect) const
+	{
+		if (_timer < 0)
+		{
+			return;
+		}
+		float t = math::sin(_timer*math::PI*8.f)*(1 - _timer)*(1 - _timer);
+		float dx = rect.Width() * 0.1f * t;
+		float dy = rect.Height() * 0.4f * t;
+		rect.yEnd -= dy;
+		rect.xStart -= dx;
+		rect.xEnd += dx;
+	}
+
+	float ChipAppearFromGround::GetAlpha() const
+	{
+		return math::clamp(0.f, 1.f, _timer / _timerScale / 0.7f);
+	}
+
 }//namespace Game

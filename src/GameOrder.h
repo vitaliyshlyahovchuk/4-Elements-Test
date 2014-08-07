@@ -15,16 +15,17 @@ public:
 
 	enum Objective
 	{
-		CHIP		= 0,
-		WALL		= 40,
-		GROUND		= 41,
-		LICORICE	= 43,
-		MUSOR       = 44,
-		TIME_BOMB   = 45,
-		ENERGY      = 46,
+		CHIP			= 0,
+		WALL			= 40,
+		GROUND			= 41,
+		LICORICE		= 43,
+		MUSOR			= 44,
+		TIME_BOMB		= 45,
+		ENERGY			= 46,
 		MOVING_MONSTER	= 47,
-		BEAR        = 48,
-		DIAMOND     = 49
+		BEAR			= 48,
+		DIAMOND			= 49,
+		GROUND_CYCLOPS	= 50,
 	};
 
 	enum Type

@@ -35,7 +35,7 @@ namespace EditorUtils
 		SaveLoad           = 10,	// cохранить/загрузить новый уровень
 		SelectChips        = 11,	// выбрать набор фишек для уровня
 		Unused_0           = 12,
-		Unused_1           = 13,
+		ChipCyclops		   = 13,	// добавить циклопа
 		AddIce             = 14,	// добавить лёд
 		AddStone           = 15,	// добавить камень
 		EditMusor          = 16,	// редактировать возможноcть появления муcора в cтолбцах

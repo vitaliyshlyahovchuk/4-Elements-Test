@@ -62,7 +62,7 @@ namespace Place2D
 		CellInfo();
 	};
 	const int MAP_HEIGHT = 30, MAP_WIDTH = 30;
-	extern std::vector<ScopePieceForDraw> wall_borders, ice_borders, stone_borders, wood_borders, wall_energy_borders, misc_borders;
+	extern std::vector<ScopePieceForDraw> wall_borders, ice_borders, stone_borders, wood_borders, wall_energy_borders, misc_borders, cyclops_borders;
 
 	extern BorderInfo *mask_map;
 	extern VertexBufferIndexed *buffer;

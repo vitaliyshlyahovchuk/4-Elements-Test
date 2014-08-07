@@ -20,6 +20,7 @@ namespace DetectBorder2D
 
 	void InitGame(rapidxml::xml_node<> *description_xml)
 	{
+		return;
 		points_by_mask.clear();
 		rapidxml::xml_node<>* borders_xml = description_xml->first_node("Curves")->first_node();
 		Assert(borders_xml);

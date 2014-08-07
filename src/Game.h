@@ -94,6 +94,8 @@ namespace GameSettings {
 	extern int need_inc_growing_wood;
 
 
+	extern bool need_inc_ground_cycops;
+
 	IPoint FieldCoordMouse();
 	
 	void Release();
@@ -123,6 +125,7 @@ namespace GameSettings {
 		int gold_wood[2];
 		int stone;
 		int bonus[2];
+		int ground_cyclops;
 
 		ScoreSettings();
 		void Load(rapidxml::xml_node<> *xml_node);
@@ -352,6 +355,7 @@ namespace ZBuf
 	const float CHIPS        = -50.0f;
 	const float ICE          = -70.0f;
 	const float STONE        = -80.0f;
+	const float CYCLOPS		 = -90.0f;
 
 	const float WALL_UNDER_E = -13.0f-GROUND_1;
 

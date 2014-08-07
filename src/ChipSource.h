@@ -18,7 +18,7 @@ class ChipSource
 	{
 		enum Type
 		{
-			NONE, CHIP, LICORICE, TIME_BOMB
+			NONE, CHIP, LICORICE, TIME_BOMB, GROUND_CYCLOPS,
 		};
 		Type type;
 		int color;

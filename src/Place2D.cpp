@@ -98,7 +98,7 @@ namespace Place2D
 
 	std::map<std::string, BorderInfo> borders;
 
-	std::vector<ScopePieceForDraw> wall_borders, ice_borders, stone_borders, wood_borders, wall_energy_borders, misc_borders;
+	std::vector<ScopePieceForDraw> wall_borders, ice_borders, stone_borders, wood_borders, wall_energy_borders, misc_borders, cyclops_borders;
 
 	BorderInfo *mask_map = NULL;
 

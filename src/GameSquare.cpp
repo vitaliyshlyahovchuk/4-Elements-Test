@@ -191,6 +191,13 @@ void Square::Reset()
 
 	_killDiamond = false;
 
+	_isCyclops = false;
+	_current_cyclops_state = CYCLOPS_STATE_NONE;
+	_cyclops_next_needed_state = CYCLOPS_STATE_NONE;
+	_cyclops_change_state_timer = 0.f;
+	_cyclops_current_action_timer = 0.f;
+	_cyclops_current_action_duration = 0.f;
+
 	KillTreasureEffect();
 }
 
@@ -222,7 +229,7 @@ void Square::SetAddress(const FieldAddress& address_)
 //на клетке стоит что то что мешает сюда прилететь
 bool Square::IsHardStand() const
 {
-	return IsStone() || GetWood() > 0 || (barrierIndex != -1) || _energy_wood
+	return IsStone() || GetWood() > 0 || (barrierIndex != -1) || _energy_wood || IsCyclops()
 		|| Gadgets::receivers.IsReceiverCell(address) 
 		|| Gadgets::lockBarriers.isLocked(address);
 }
@@ -613,6 +620,119 @@ void Square::Update(float dt, bool isOnScreen, bool isOnActiveZone)
 		Energy::field.UpdateSquare(address);
 	}
 
+	if (IsCyclops())
+	{
+		UpdateCyclops(dt);
+	}
+
+}
+
+void Square::UpdateCyclops(float dt)
+{
+	if (_cyclops_change_state_timer > 0.f)
+	{
+		_cyclops_change_state_timer -= dt;
+		if (_cyclops_change_state_timer <= 0.f)
+		{
+			ChangeCyclopsState(_cyclops_next_needed_state);
+		}
+	}
+
+	switch (_current_cyclops_state)
+	{
+	case CYCLOPS_STATE_LOOK_LEFT:
+		PlayLookLeft(dt);
+		break;
+	case CYCLOPS_STATE_LOOK_RIGHT:
+		PlayLookRight(dt);
+		break;
+	case CYCLOPS_STATE_LOOK_LEFT_RIGHT:
+		PlayLookLeftRight(dt);
+		break;
+	case CYCLOPS_STATE_LOOK_RIGHT_LEFT:
+		PlayLookRightLeft(dt);
+		break;
+	}
+}
+
+void Square::UpdateCyclopsAction(float dt)
+{
+	if (_cyclops_current_action_timer > 0.f)
+	{
+		_cyclops_current_action_timer -= dt;
+		if (_cyclops_current_action_timer <= 0.f)
+			_cyclops_current_action_timer = 0.f;
+	}
+}
+
+void Square::ChangeCyclopsState(int new_state)
+{
+	const float min_interval = 2.5f;
+	const float max_interval = 5.f;
+	switch (new_state)
+	{
+	case CYCLOPS_STATE_NONE:
+	{
+
+	}
+		break;
+	case CYCLOPS_STATE_GROW:
+	{
+		_cyclops_change_state_timer = math::random(min_interval, max_interval);
+		_cyclops_next_needed_state = math::random(CYCLOPS_STATE_BLINK, CYCLOPS_STATE_LOOK_LEFT_RIGHT);
+		GetChip().AddDistortion(boost::intrusive_ptr<ChipAppearFromGround>(new ChipAppearFromGround(0.f, 1.2f)));
+	}
+		break;
+	case CYCLOPS_STATE_APPEAR_WITHOUT_GROW:
+	{
+		_cyclops_change_state_timer = math::random(min_interval, max_interval);
+		_cyclops_next_needed_state = math::random(CYCLOPS_STATE_BLINK, CYCLOPS_STATE_LOOK_LEFT_RIGHT);
+	}
+		break;
+	case CYCLOPS_STATE_BLINK:
+	{
+		_cyclops_change_state_timer = math::random(min_interval, max_interval);
+		_cyclops_next_needed_state = math::random(CYCLOPS_STATE_BLINK, CYCLOPS_STATE_LOOK_LEFT_RIGHT);
+		if (IsStandbyState())
+			Game::AddController(new FlashAnimationPlayer(Game::ANIM_RESOURCES["choc_blink"], _pos + FPoint(11.f, 158.f) * GameSettings::SQUARE_SCALE));
+	}
+		break;
+	case CYCLOPS_STATE_LOOK_LEFT:
+	case CYCLOPS_STATE_LOOK_RIGHT:
+	case CYCLOPS_STATE_LOOK_LEFT_RIGHT :
+	case CYCLOPS_STATE_LOOK_RIGHT_LEFT :
+	{
+		_cyclops_change_state_timer = math::random(min_interval, max_interval);
+		_cyclops_current_action_duration = _cyclops_current_action_timer = math::random(1.f, 2.f);
+		_cyclops_next_needed_state = math::random(CYCLOPS_STATE_BLINK, CYCLOPS_STATE_LOOK_LEFT_RIGHT);
+	}
+		break;
+	}
+	_current_cyclops_state = (CyclopsState)new_state;
+}
+
+void Square::PlayLookLeft(float dt)
+{
+	UpdateCyclopsAction(dt);
+	_eye_offset_delta.x = -math::sin((1.f / _cyclops_current_action_duration) * _cyclops_current_action_timer * math::PI) * 3.f;
+}
+
+void Square::PlayLookRight(float dt)
+{
+	UpdateCyclopsAction(dt);
+	_eye_offset_delta.x = math::sin((1.f / _cyclops_current_action_duration) * _cyclops_current_action_timer * math::PI) * 3.f;
+}
+
+void Square::PlayLookRightLeft(float dt)
+{
+	UpdateCyclopsAction(dt);
+	_eye_offset_delta.x = -math::sin((1.f / _cyclops_current_action_duration) * _cyclops_current_action_timer * math::PI * 2.f) * 3.f;
+}
+
+void Square::PlayLookLeftRight(float dt)
+{
+	UpdateCyclopsAction(dt);
+	_eye_offset_delta.x = math::sin((1.f / _cyclops_current_action_duration) * _cyclops_current_action_timer * math::PI * 2.f) * 3.f;
 }
 
 void Square::CheckHangForChip()
@@ -767,6 +887,10 @@ bool Square::IsNormal() const
 	{
 		return false;
 	}
+	if (IsCyclops())
+	{
+		return false;
+	}
 	return true;
 }
 
@@ -778,6 +902,11 @@ bool Square::IsStandbyState() const
 bool Square::IsIce() const
 {
 	return (ice > 0) || (_iceDestroyTimer < 0.0f);
+}
+
+bool Square::IsCyclops() const
+{
+	return _isCyclops;
 }
 
 ChipColor& Square::GetChip() 
@@ -920,6 +1049,17 @@ bool Square::KillSquareNear(float pause_color)
 		} else {
 			//_fake = true;
 		}
+		return true;
+	}
+	if (IsCyclops())
+	{
+		Game::AddController(new FlashAnimationPlayer(Game::ANIM_RESOURCES["choc_0"], _pos + FPoint(40.f, 40.f) * GameSettings::SQUARE_SCALE));
+		SetCyclops(false);
+		_chip.Reset(true);
+		Game::Orders::KillCell(Game::Order::GROUND_CYCLOPS, address);
+		GameField::Get()->AddScore(address, GameSettings::score.ground_cyclops);
+		GameSettings::need_inc_ground_cycops = false;
+
 		return true;
 	}
 
@@ -1259,6 +1399,8 @@ void Square::DrawChip(int layer, Render::SpriteBatch *batch)
 	if( layer == chipLayer )
 	{
 		_chip.Draw(_pos + _flyChipOffset, address, batch, IsIce());
+		if (IsCyclops())
+			_chip.DrawCyclopsEye(_pos + _flyChipOffset + _eye_offset_delta, batch);
 	}
 	if( layer == 2 )
 	{
@@ -1393,6 +1535,10 @@ void Square::SwapChips(Game::Square *sq1, Game::Square *sq2)
 			return false;
 		}
 		if(portalEnergy)
+		{
+			return false;
+		}
+		if (IsCyclops())
 		{
 			return false;
 		}
@@ -1551,7 +1697,7 @@ void Square::SwapChips(Game::Square *sq1, Game::Square *sq2)
 				return false;
 			}
 		}
-		return (_wall == 0) && !_isSand && (_wood == 0) && IsStayFly()
+		return (_wall == 0) && !_isSand && (_wood == 0) && IsStayFly() && !_isCyclops
 			&& !_is_short_square && address.IsValid();
 	}
 
@@ -2240,6 +2386,14 @@ void Square::SwapChips(Game::Square *sq1, Game::Square *sq2)
 	bool Square::IsAddToDownDraw() const
 	{
 		return _flyType == FLY_HIDING && _flyAddToDownInHide;
+	}
+
+	void Square::SetCyclops(bool is_cyclops)
+	{
+		_isCyclops = is_cyclops;
+		ice = _isCyclops ? 1 : 0;
+		_wood = 0;
+		_wall = 0;
 	}
 } // namespace Game
 

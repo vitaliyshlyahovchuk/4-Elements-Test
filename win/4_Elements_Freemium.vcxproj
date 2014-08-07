@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- edited with XMLSpy v2012 (http://www.altova.com) by AK (OOO Playrix) -->
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -20,13 +20,13 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v110_xp</PlatformToolset>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v110_xp</PlatformToolset>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
@@ -446,14 +446,22 @@
     </Xml>
     <Xml Include="..\start\base\FlyingBoosters.xml" />
     <Xml Include="..\start\base\fonts.xml" />
-    <Xml Include="..\start\base\GameDescriptions.xml" />
+    <Xml Include="..\start\base\GameDescriptions.xml">
+      <SubType>Designer</SubType>
+    </Xml>
     <Xml Include="..\start\base\GamePanel.xml" />
     <Xml Include="..\start\base\GameResource.xml">
       <SubType>Designer</SubType>
     </Xml>
-    <Xml Include="..\start\base\GameResource_ipad.xml" />
-    <Xml Include="..\start\base\GameResource_ipad_retina.xml" />
-    <Xml Include="..\start\base\GameResource_iphone.xml" />
+    <Xml Include="..\start\base\GameResource_ipad.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="..\start\base\GameResource_ipad_retina.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="..\start\base\GameResource_iphone.xml">
+      <SubType>Designer</SubType>
+    </Xml>
     <Xml Include="..\start\base\GameSettings.xml">
       <SubType>Designer</SubType>
     </Xml>

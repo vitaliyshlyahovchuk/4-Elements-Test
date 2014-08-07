@@ -53,4 +53,13 @@ namespace Game
 		bool ShowEye() const;
 	};
 
+	struct ChipAppearFromGround
+		: public ChipDistortion
+	{
+		ChipAppearFromGround(float pause, float time);
+		bool Update(float dt);
+		void CorrectRect(FRect &rect) const;
+		float GetAlpha() const;
+	};
+
 }//namespace Game

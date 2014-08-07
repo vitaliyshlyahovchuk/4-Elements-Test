@@ -21,14 +21,16 @@ namespace Game
 {
 	enum ChipColors : int // отражает на каком месте в текстуре Chips.png находятся какие виды фишек
 	{
-		KEY      = 55,
-		MUSOR    = 56,
-		TREASURE = 57,
-		MONSTER  = 58,
-		LICORICE = 59,
-		SNOW     = 60,
-		DIAMOND  = 61,
-		ADAPT    = 62,
+		GROUND_CYCLOPS_EYE	= 45,
+		GROUND_CYCLOPS		= 54,
+		KEY					= 55,
+		MUSOR				= 56,
+		TREASURE			= 57,
+		MONSTER				= 58,
+		LICORICE			= 59,
+		SNOW				= 60,
+		DIAMOND				= 61,
+		ADAPT				= 62,
 	};
 	
 	//Все что принадлежит фишке находится в ChipColor.
@@ -38,14 +40,15 @@ namespace Game
 	public:
 		enum Type : int
 		{
-			CHIP      = 0,
-			LICORICE  = 1,
-			KEY       = 2,
-			TREASURE  = 4,
-			THIEF     = 5,
-			STAR      = 6,
-			MUSOR     = 7,
-			DIAMOND   = 8
+			CHIP			= 0,
+			LICORICE		= 1,
+			KEY				= 2,
+			TREASURE		= 4,
+			THIEF			= 5,
+			STAR			= 6,
+			MUSOR			= 7,
+			DIAMOND			= 8,
+			GROUND_CYCLOPS	= 9,
 		};
 	private:
 		bool _isOnActiveZone;
@@ -185,6 +188,7 @@ namespace Game
 		void Draw(const FPoint &pos, const Game::FieldAddress &address, Render::SpriteBatch* batch, bool in_ice);
 		void DrawOver();
 		void BreakStarArrow();
+		void DrawCyclopsEye(const FPoint &pos, Render::SpriteBatch* batch) const;
 
 		// Первая подcвеченная иконка в цепочке
 		void setFirstHighlight(const bool &highlighted);
@@ -285,5 +289,7 @@ namespace Game
 		void AddDistortion(boost::intrusive_ptr<ChipDistortion> dist);
 
 		float GetDistortionsAlpha(bool &show_eye_for_anim);
+
+		void SetGroundCyclops();
 	};
 } // namespace Game

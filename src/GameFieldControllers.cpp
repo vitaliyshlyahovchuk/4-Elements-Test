@@ -588,6 +588,9 @@ SequenceDestroyer::SequenceDestroyer(const AddressVector& chipSeq_, GameField *g
 	{
 		sq->GetChip().ClearOffset();
 	}
+
+	if (_chipSeq.size() >= 3)
+		GameSettings::need_inc_ground_cycops = true;
 }
 
 void SequenceDestroyer::Init()

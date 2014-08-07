@@ -92,6 +92,8 @@ namespace GameSettings
 	FPoint CELL_HALF;
 	IRect CELL_RECT;
 
+	bool need_inc_ground_cycops = false;
+
 	ChipSettings::ChipSettings()
 		: color_wall(Color::WHITE)
 		, color_score(Color::WHITE)
@@ -114,6 +116,7 @@ namespace GameSettings
 		, licorice(50)
 		, thief(50)
 		, stone(50)
+		, ground_cyclops(50)
 	{
 		treasure[0] = 100; treasure[1] = 500; treasure[2] = 2000;
 		bonus[0] = 500; bonus[1] = 2500;
@@ -139,6 +142,7 @@ namespace GameSettings
 			node = xml_node->first_node("SpecialChip");
 			licorice = Xml::GetIntAttributeOrDef(node, "licorice", 50);
 			thief = Xml::GetIntAttributeOrDef(node, "thief", 50);
+			ground_cyclops = Xml::GetIntAttributeOrDef(node, "ground_cyclops", 50);
 
 			node = xml_node->first_node("Square");
 			wood[0] = Xml::GetIntAttributeOrDef(node, "wood", 50);

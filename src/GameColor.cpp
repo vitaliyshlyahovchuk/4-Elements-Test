@@ -276,6 +276,21 @@ namespace Game
 		return rect;
 	}
 
+	void ChipColor::DrawCyclopsEye(const FPoint &pos, Render::SpriteBatch* batch) const
+	{
+		FRect f_rect = Game::GetChipRect(Game::GROUND_CYCLOPS_EYE, false, false, false);
+		FRect rect_for_draw_chip = GetDrawRect(Game::GROUND_CYCLOPS_EYE, false, false).MovedBy(pos);
+
+		Render::BeginAlphaMul(_chipAlpha);
+		if (batch) {
+			batch->Draw(ChipColor::chipsTex, Render::ALPHA, rect_for_draw_chip, f_rect);
+		}
+		else {
+			ChipColor::chipsTex->Draw(rect_for_draw_chip, f_rect);
+		}
+		Render::EndAlphaMul();
+	}
+
 	void ChipColor::DrawChipFixedColor(int value, const FPoint &pos, Render::SpriteBatch* batch, bool in_sequence, bool in_ice, bool has_hang) const
 	{
 		FRect f_rect = Game::GetChipRect(value, has_hang, in_ice, in_sequence);
@@ -366,7 +381,11 @@ namespace Game
 
 		if(_type == LICORICE) {
 			DrawChipFixedColor(Game::LICORICE, pos, batch);
-		} else if(_type == STAR) {
+		}
+		else if (_type == GROUND_CYCLOPS) {
+			DrawChipFixedColor(Game::GROUND_CYCLOPS, pos, batch);
+		}
+		else if(_type == STAR) {
 			//Тени рисуются за молниями
 			for(Byte i = 0; i < _starAct; i++)
 			{
@@ -1347,6 +1366,12 @@ namespace Game
 		_type = LICORICE;
 	}
 
+	void ChipColor::SetGroundCyclops()
+	{
+		ResetColor();
+		_type = GROUND_CYCLOPS;
+	}
+
 	void ChipColor::SetThief(IPoint index)
 	{
 		Assert(!_thief);
@@ -1415,6 +1440,10 @@ namespace Game
 			_chipAnim->SetLoop(true);
 		}
 		else if(_type == LICORICE)
+		{
+			_preinstalled = true;
+		}
+		else if (_type == GROUND_CYCLOPS)
 		{
 			_preinstalled = true;
 		}
