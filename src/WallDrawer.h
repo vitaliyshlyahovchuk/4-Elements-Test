@@ -39,6 +39,7 @@ public:
 
 	void DrawCyclops();
 	void DrawCyclopsBorders();
+	void DrawCyclopsTransparent();
 
 	void Init();
 	//На каждом уровне может быть свой набор элементов. После загрузки инициализируем переменные _exist...

@@ -301,6 +301,7 @@ namespace Game {
 		static float FLY_SQ_TIME_AFTER_AND_BEFORE_SCALE, FLY_SQ_TIME_APPEAR_EFFECT;
 		static float FLY_SQ_CHIP_DELAY_APPEAR, FLY_SQ_CHIP_DELAY_APPEAR_FIRST, FLY_SQ_CHIP_DELAY_HIDE;
 		static float FLY_SQ_APPEAR_CHIP_ALPHA_PART;
+		static float CYCLOPS_BACKGROUND_APPEAR_DISAPPEAR_TIME;
 		float _scale;
 		float _flyTimeFull;
 		float _flyG;
@@ -310,6 +311,9 @@ namespace Game {
 		bool _flyEffectAppear;
 		float _flyArrowAlpha;
 		bool _flyAddToDownInHide;
+
+		float GetCyclopsDisappearBackgroundAlpha();
+		float GetCyclopsAppearBackgroundAlpha();
 	private:
 
 		ChipColor _chip;
@@ -333,6 +337,8 @@ namespace Game {
 		float	_cyclops_current_action_duration;
 		int		_cyclops_next_needed_state;//следующее необходимое состояния
 		FPoint  _eye_offset_delta;
+		float	_cyclops_disappear_bg_timer;
+		float	_cyclops_appear_bg_timer;
 
 		void UpdateCyclops(float dt);
 		void UpdateCyclopsAction(float dt);

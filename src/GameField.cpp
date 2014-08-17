@@ -1073,7 +1073,7 @@ void GameField::DrawField()
 		Gadgets::wallDrawer.DrawStoneBorders();
 		//Render::device.SetStencilTest(false);
 		Gadgets::wallDrawer.DrawCyclopsBorders();
-
+		Gadgets::wallDrawer.DrawCyclopsTransparent();
 
 
 		Render::device.SetDepthTest(false);

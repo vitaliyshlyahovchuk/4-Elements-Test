@@ -170,6 +170,16 @@ bool is_cyclops(Game::Square *sq)
 	return sq->IsCyclops() && is_visible(sq);
 }
 
+bool is_cyclops_disappear_bg(Game::Square *sq)
+{
+	return is_cyclops(sq) && (sq->GetCyclopsDisappearBackgroundAlpha() < 1.f);
+}
+
+bool is_cyclops_appear_bg(Game::Square *sq)
+{
+	return is_cyclops(sq) && (sq->GetCyclopsAppearBackgroundAlpha() != 0.f);
+}
+
 bool is_indestructible(Game::Square *sq)
 {
 	return sq->IsIndestructible() && is_visible(sq);
@@ -415,6 +425,39 @@ void WallDrawer::DrawCyclopsBorders()
 		return;
 	}
 	Place2D::DrawBorders(Place2D::cyclops_borders, "cyclops");
+}
+
+void WallDrawer::DrawCyclopsTransparent()
+{
+	bool is_cyclops_disappear_process = false;
+	bool is_cyclops_appear_process = false;
+
+	for (int x = Game::visibleRect.LeftBottom().x; x <= Game::visibleRect.RightTop().x; x++)
+	{
+		for (int y = Game::visibleRect.LeftBottom().y; y <= Game::visibleRect.RightTop().y; y++)
+		{
+			Game::Square *s = GameSettings::gamefield[x + 1][y + 1];
+			if (s->IsCyclops())
+			{
+				if (!is_cyclops_disappear_process && (s->GetCyclopsDisappearBackgroundAlpha() < 1.f))
+				{
+					is_cyclops_disappear_process = true;
+					Color wall_color("#9ac62d");
+					wall_color.alpha = uint8_t(0xFF * s->GetCyclopsDisappearBackgroundAlpha());
+					Place2D::SetParams(0.3f, 0.4f, 0.f);
+					ProcessPlace(is_cyclops_disappear_bg, is_true, NULL, wall_color, "", GameSettings::CELL_RECT, ZBuf::CYCLOPS - ZBuf::Z_EPS);
+				}
+				if (!is_cyclops_appear_process && (s->GetCyclopsAppearBackgroundAlpha() != 0.f))
+				{
+					is_cyclops_appear_process = true;
+					Color wall_color("#9ac62d");
+					wall_color.alpha = uint8_t(0xFF * s->GetCyclopsAppearBackgroundAlpha());
+					Place2D::SetParams(0.3f, 0.4f, 0.f);
+					ProcessPlace(is_cyclops_appear_bg, is_true, NULL, wall_color, "", GameSettings::CELL_RECT, ZBuf::CYCLOPS - ZBuf::Z_EPS);
+				}
+			}
+		}
+	}
 }
 
 bool is_visible_for_sand(Game::Square *sq)

@@ -148,7 +148,7 @@ namespace Gadgets
 			{
 				i->second.level_hang.Save(xml_chip);
 			}
-		}	
+		}
 	}
 
 	void ChipsInfo::Apply()
@@ -525,6 +525,13 @@ namespace Gadgets
 		{
 			changed = !info.level_hang.IsEmpty();
 			info.level_hang.Clear();
+		}
+		else if(EditorUtils::activeEditBtn == EditorUtils::ChipCyclops)
+		{
+			if (info.type == Game::ChipColor::GROUND_CYCLOPS) {
+				info.type = Game::ChipColor::CHIP;
+				Log::Info("Cyclops deleted");
+			}
 		}
 
 		if( changed ) {

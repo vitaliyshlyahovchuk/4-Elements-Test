@@ -58,6 +58,8 @@ namespace Game {
 
 	float Square::FLY_SQ_APPEAR_CHIP_ALPHA_PART = 0.1f;
 
+	float Square::CYCLOPS_BACKGROUND_APPEAR_DISAPPEAR_TIME = 0.8f;
+
 	void Square::InitGame() 
 	{
 		upElementsTexture = Core::resourceManager.Get<Render::Texture>("UpElements");
@@ -197,6 +199,8 @@ void Square::Reset()
 	_cyclops_change_state_timer = 0.f;
 	_cyclops_current_action_timer = 0.f;
 	_cyclops_current_action_duration = 0.f;
+	_cyclops_disappear_bg_timer = 0.f;
+	_cyclops_appear_bg_timer = 0.f;
 
 	KillTreasureEffect();
 }
@@ -620,7 +624,7 @@ void Square::Update(float dt, bool isOnScreen, bool isOnActiveZone)
 		Energy::field.UpdateSquare(address);
 	}
 
-	if (IsCyclops())
+	if (IsCyclops() && isOnScreen && isOnActiveZone)
 	{
 		UpdateCyclops(dt);
 	}
@@ -629,6 +633,24 @@ void Square::Update(float dt, bool isOnScreen, bool isOnActiveZone)
 
 void Square::UpdateCyclops(float dt)
 {
+	if (_cyclops_disappear_bg_timer > 0.f)
+	{
+		_cyclops_disappear_bg_timer -= dt;
+		if (_cyclops_disappear_bg_timer <= 0.f)
+		{
+			_cyclops_disappear_bg_timer = 0.f;
+			SetCyclops(false);
+			return;
+		}
+	}
+
+	if (_cyclops_appear_bg_timer > 0.f)
+	{
+		_cyclops_appear_bg_timer -= dt;
+		if (_cyclops_appear_bg_timer <= 0.f)
+			_cyclops_appear_bg_timer = 0.f;
+	}
+
 	if (_cyclops_change_state_timer > 0.f)
 	{
 		_cyclops_change_state_timer -= dt;
@@ -668,7 +690,7 @@ void Square::UpdateCyclopsAction(float dt)
 void Square::ChangeCyclopsState(int new_state)
 {
 	const float min_interval = 2.5f;
-	const float max_interval = 5.f;
+	const float max_interval = 5.0f;
 	switch (new_state)
 	{
 	case CYCLOPS_STATE_NONE:
@@ -681,6 +703,7 @@ void Square::ChangeCyclopsState(int new_state)
 		_cyclops_change_state_timer = math::random(min_interval, max_interval);
 		_cyclops_next_needed_state = math::random(CYCLOPS_STATE_BLINK, CYCLOPS_STATE_LOOK_LEFT_RIGHT);
 		GetChip().AddDistortion(boost::intrusive_ptr<ChipAppearFromGround>(new ChipAppearFromGround(0.f, 1.2f)));
+		_cyclops_appear_bg_timer = CYCLOPS_BACKGROUND_APPEAR_DISAPPEAR_TIME;
 	}
 		break;
 	case CYCLOPS_STATE_APPEAR_WITHOUT_GROW:
@@ -694,7 +717,7 @@ void Square::ChangeCyclopsState(int new_state)
 		_cyclops_change_state_timer = math::random(min_interval, max_interval);
 		_cyclops_next_needed_state = math::random(CYCLOPS_STATE_BLINK, CYCLOPS_STATE_LOOK_LEFT_RIGHT);
 		if (IsStandbyState())
-			Game::AddController(new FlashAnimationPlayer(Game::ANIM_RESOURCES["choc_blink"], _pos + FPoint(11.f, 158.f) * GameSettings::SQUARE_SCALE));
+			Game::AddController(new FlashAnimationPlayer(Game::ANIM_RESOURCES["choc_blink"], _pos + FPoint(9.5f, 154.f) * GameSettings::SQUARE_SCALE));
 	}
 		break;
 	case CYCLOPS_STATE_LOOK_LEFT:
@@ -733,6 +756,16 @@ void Square::PlayLookLeftRight(float dt)
 {
 	UpdateCyclopsAction(dt);
 	_eye_offset_delta.x = math::sin((1.f / _cyclops_current_action_duration) * _cyclops_current_action_timer * math::PI * 2.f) * 3.f;
+}
+
+float Square::GetCyclopsDisappearBackgroundAlpha()
+{
+	return (CYCLOPS_BACKGROUND_APPEAR_DISAPPEAR_TIME - _cyclops_disappear_bg_timer) / CYCLOPS_BACKGROUND_APPEAR_DISAPPEAR_TIME;
+}
+
+float Square::GetCyclopsAppearBackgroundAlpha()
+{
+	return (CYCLOPS_BACKGROUND_APPEAR_DISAPPEAR_TIME - (CYCLOPS_BACKGROUND_APPEAR_DISAPPEAR_TIME - _cyclops_appear_bg_timer)) / CYCLOPS_BACKGROUND_APPEAR_DISAPPEAR_TIME;
 }
 
 void Square::CheckHangForChip()
@@ -1054,11 +1087,11 @@ bool Square::KillSquareNear(float pause_color)
 	if (IsCyclops())
 	{
 		Game::AddController(new FlashAnimationPlayer(Game::ANIM_RESOURCES["choc_0"], _pos + FPoint(40.f, 40.f) * GameSettings::SQUARE_SCALE));
-		SetCyclops(false);
 		_chip.Reset(true);
 		Game::Orders::KillCell(Game::Order::GROUND_CYCLOPS, address);
 		GameField::Get()->AddScore(address, GameSettings::score.ground_cyclops);
 		GameSettings::need_inc_ground_cycops = false;
+		_cyclops_disappear_bg_timer = CYCLOPS_BACKGROUND_APPEAR_DISAPPEAR_TIME;
 
 		return true;
 	}
@@ -1399,7 +1432,7 @@ void Square::DrawChip(int layer, Render::SpriteBatch *batch)
 	if( layer == chipLayer )
 	{
 		_chip.Draw(_pos + _flyChipOffset, address, batch, IsIce());
-		if (IsCyclops())
+		if (IsCyclops() && (_chip.GetType() == Game::ChipColor::GROUND_CYCLOPS))
 			_chip.DrawCyclopsEye(_pos + _flyChipOffset + _eye_offset_delta, batch);
 	}
 	if( layer == 2 )
@@ -2393,7 +2426,7 @@ void Square::SwapChips(Game::Square *sq1, Game::Square *sq2)
 		_isCyclops = is_cyclops;
 		ice = _isCyclops ? 1 : 0;
 		_wood = 0;
-		_wall = 0;
+		_wall = 1;
 	}
 } // namespace Game
 

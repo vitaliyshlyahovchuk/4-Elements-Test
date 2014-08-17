@@ -180,6 +180,13 @@ namespace EditorUtils
 
 				if (Game::isVisible(sq) && (!sq->IsFake()))
 				{
+					if (sq->IsCyclops())
+					{
+						sq->SetCyclops(false);
+						sq->GetChip().Reset(true);
+						return false;
+					}
+
 					if (sq->ice > 0)
 					{
 						sq->ice = 0;
